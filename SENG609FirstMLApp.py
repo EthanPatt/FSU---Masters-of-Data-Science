@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 # Author:       Ethan Pattison
 # FSU Course:   SENG 609
@@ -10,8 +5,6 @@
 # Assingment:   Assignment 5: Building your first ML application
 # Date:         9/21/2022
 
-
-# In[708]:
 
 # import packages and functions
 import pandas as pd
@@ -31,9 +24,6 @@ import joblib
 df = pd.read_csv('heart_2020.csv', sep=',')
 
 df
-
-
-# In[709]:
 
 
 # Create Function to Change the Columns to Numeric Values.
@@ -60,8 +50,6 @@ df['SkinCancerNum'] = df['SkinCancer'].apply(tran_HeartDisease)
 df
 
 
-# In[710]:
-
 
 # Define a function to normalize
 
@@ -81,15 +69,12 @@ normalize("PhysicalHealth")
 # Print to See if the the values are changed
 df.head(9)
 
-# In[711]:
 
 
 # Get the Columns and out from the file and save as a dataframe
 
 XY = df[['Sex', 'HeartDiseaseNum', 'SmokingNum', 'AlcoholDrinkingNum', 'StrokeNum', 'PhysicalHealth', 'MentalHealth',
          'DiffWalkingNum', 'PhysicalActivityNum', 'SleepTime', 'AsthmaNum', 'KidneyDiseaseNum', 'SkinCancerNum']]
-
-# In[712]:
 
 
 # One Hot-Encode for the column Sex
@@ -101,9 +86,6 @@ columns_trans = make_column_transformer(
 X = columns_trans.fit_transform(XY)
 print(X)
 
-# In[713]:
-
-
 # Convert the Data back to a dataframe
 
 Data = pd.DataFrame(X,
@@ -112,8 +94,6 @@ Data = pd.DataFrame(X,
                              'DiffWalkingNum', 'PhysicalActivityNum', 'SleepTime', 'AsthmaNum', 'KidneyDiseaseNum',
                              'SkinCancerNum'])
 Data
-
-# In[714]:
 
 
 # Set the columns for X and Y
@@ -145,8 +125,6 @@ print(f" - Training Set Error: {mse_train}")
 mse_test = mean_absolute_error(y_test, model.predict(X_test))
 print(f" - Testing Set Error: {mse_test}")
 
-# In[715]:
-
 
 # Test The model by making a prediction
 
@@ -164,9 +142,6 @@ predicted_value = Heart_Prediction[0]
 
 # print the results
 print(f"Estimation for heart disease: {predicted_value}")
-
-
-# In[716]:
 
 
 def main():
@@ -247,9 +222,6 @@ def main():
         print("\nHave a great day!")
 
 
-# In[700]:
-
-
 # Run the main function
 
 main()
@@ -287,8 +259,6 @@ print(f" - Training Set Error: {mse_train}")
 mse_test = mean_absolute_error(y_test, clf.predict(X_test))
 print(f" - Testing Set Error: {mse_test}")
 
-# In[719]:
-
 
 # Example of a prediction
 # Test The model by making a prediction
@@ -307,9 +277,6 @@ predicted_value = Heart_Prediction[0]
 
 # print the results
 print(f"Estimation for heart disease: {predicted_value}")
-
-
-# In[720]:
 
 
 def main_Function():
@@ -388,9 +355,6 @@ def main_Function():
         main_Function()
     else:
         print("\nHave a great day!")
-
-
-# In[721]:
 
 
 # Run the main function
