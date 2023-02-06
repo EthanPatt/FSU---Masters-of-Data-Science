@@ -1,4 +1,3 @@
-
 # Author:       Ethan Pattison
 # FSU Course:   SENG 609
 # Professor:    Dr Abusharkh
