@@ -1,5 +1,3 @@
-
-
 # Author:       Ethan Pattison
 # FSU Course:   SENG 609
 # Professor:    Dr Abusharkh
@@ -214,10 +212,5 @@ print(f"False Negatives: {fn}")
 # Calculate Precision and Recall for each class
 report = classification_report(y_test, predictions)
 print(report)
-
-
-
-
-
 
 
